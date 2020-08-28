@@ -14,5 +14,5 @@ greater than m2, the stock is overvalued and we sell (or short, if that's an opt
 
 The question then is: "what is the optimum values of m1 and m2?" and "how to do we pick
 which stocks to put our money into?" The first depends on the company (in particular, 
-a company's volitility) while the second depends on weights that will need to be
+the company's volitility) while the second depends on weights that will need to be
 carefully optimized. 
