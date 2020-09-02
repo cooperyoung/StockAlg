@@ -160,11 +160,11 @@ for row in table.findAll('tr')[1:]:
 
 # Range through the S&P500 and write the best means from the previous 
 # year to our output file (uses tqdm & time.sleep for progress bar)
-f = open("2019-01_Means.txt", "a")
-for i in range(400, len(s_and_p500), 1):
-	m1, m2 = opt_means(s_and_p500[i], "2017-12-28", "2018-12-28")
+f = open("2019-02_Means.txt", "a")
+for i in range(0, len(s_and_p500), 1):
+	m1, m2 = opt_means(s_and_p500[i], "2018-01-28", "2019-01-28")
 	f.write("{} \t {} \t {} \n".format(s_and_p500[i], m1, m2))
 
-# Currently it's set to print the best means for January, 2019
+# Currently it's set to print the best means for February, 2019
 # based on data from the previous year (run time ~2.5h)
 
