@@ -1,11 +1,11 @@
 '''
 This program will take in a universe of companies 
-(the S&P 500 for instance) and a month (usually the 
+(currently the S&P 500) and a month (usually the 
 coming month) and outputs a txt file in the form of:
 
 Ticker Symbol      m1      m2
 
-where (m1, m2) are the bestrunnng mean lengths from
+where (m1, m2) are the best rolling mean lengths from
 the past year. 
 
 Note: There is also a currently unused function that can 
