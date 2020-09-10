@@ -32,9 +32,12 @@ class Stock:
 
 def sortkey(stock, current_date):
 	early_date = current_date - timedelta(days = int(stock.m2))
-	data = yf.download(stock.ticker, start = early_date, end = current_date)['Adj Close']
-	difference = data.rolling(int(stock.m2)).mean()[-1] - data.rolling(int(stock.m1)).mean()[-1]
-	return abs(difference)
+	try:
+		data = yf.download(stock.ticker, start = early_date, end = current_date)['Adj Close']
+		difference = data.rolling(int(stock.m2)).mean()[-1] - data.rolling(int(stock.m1)).mean()[-1]
+		return abs(difference)
+	except:
+		return float('inf')
 
 def to_string(stock):
 	return("Ticker: {} \t Means: ({}, {})".format(stock.ticker, stock.m1, stock.m2))
@@ -56,7 +59,7 @@ def info(stock, current_date):
 		key_info.append(1)
 	else:
 		# CHANGE THIS BACK, I'M JUST TESTING SOMETHING
-		key_info.append(1)
+		key_info.append(-1)
 
 	return key_info
 
@@ -89,7 +92,6 @@ for i in range(0, test_days.days + 1, 7):
 
 	hot_stocks = []
 	hot_stocks = nsmallest(25, universe, key = lambda stock: sortkey(stock, this_week))
-
 	for stock in hot_stocks:
 		print(to_string(stock))
 
@@ -111,5 +113,5 @@ for i in range(0, test_days.days + 1, 7):
 		print(l)
 
 	print(cash)
-	print("Percentage growth: {}%".format((cash-10000.0)/10000)*100)
+	print("Percentage growth: {}%".format(((cash-10000.0)/10000)*100))
 
