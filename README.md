@@ -1,6 +1,9 @@
 # StockAlg
 Quantitative trading algorithm using mean reversion
 
+NOTE: this is my very first trading alg, meant only to see how it might be done.
+The next version will implement machine learning and a different kind of strategy...
+
 This program is used to test and implement a quantatiative trading algorithm 
 that uses the idea of reversion to the mean. Reversion to the mean is the idea
 that stocks have an inherent price, and the fluctuations in the market are 
